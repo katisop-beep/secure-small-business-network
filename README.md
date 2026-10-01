@@ -150,3 +150,66 @@ Commands used to verify the network included:
 ## Lab File
 
 The complete Cisco Packet Tracer `.pkt` file is included in this repository so the network configuration can be reviewed and tested.
+## Project Evidence
+
+The following screenshots document the configuration, verification, testing, and security controls implemented during this lab.
+
+### 1. Network Topology
+
+The completed Packet Tracer topology contains a Cisco router, Cisco 2960 switch, and seven end-user devices separated into IT, STAFF, and ADMIN departments.
+
+![Network Topology](01-network-topology.png)
+
+### 2. VLAN Segmentation
+
+VLANs 10, 20, and 30 were created for the IT, STAFF, and ADMIN departments, with the appropriate switch access ports assigned to each VLAN.
+
+![VLAN Configuration](02-vlan-configuration.png)
+
+### 3. 802.1Q Trunk Verification
+
+The switch-to-router connection was configured as a trunk carrying VLANs 10, 20, and 30.
+
+![Trunk Verification](03-trunk-verification.png)
+
+### 4. Router-on-a-Stick Configuration
+
+Router subinterfaces provide the default gateways and inter-VLAN routing for each network.
+
+![Router-on-a-Stick](04-router-on-a-stick.png)
+
+### 5. DHCP Address Allocation
+
+DHCP was configured for all three VLANs, allowing end devices to obtain their IPv4 configuration dynamically.
+
+![DHCP Bindings](05-dhcp-bindings.png)
+
+### 6. Inter-VLAN Connectivity Testing
+
+Connectivity tests were performed to verify successful routing between the VLANs before security restrictions were applied.
+
+![Inter-VLAN Routing](06-inter-vlan-routing.png)
+
+### 7. Connectivity Before ACL Enforcement
+
+Before the security restriction was enforced, the STAFF network was able to communicate with the ADMIN network.
+
+![Before ACL](07-before-acl-staff-to-admin.png)
+
+### 8. Extended ACL Configuration
+
+The `STAFF_SECURITY` extended ACL was configured to deny traffic originating from the STAFF subnet and destined for the ADMIN subnet while permitting other IP traffic.
+
+![ACL Configuration](08-acl-configuration.png)
+
+### 9. Security Policy Verification
+
+After ACL implementation, testing confirmed that STAFF devices could still communicate with the IT network while communication from STAFF to ADMIN was blocked.
+
+![ACL Security Test](09-after-acl-security-test.png)
+
+---
+
+## Project Outcome
+
+This project demonstrates practical experience designing and troubleshooting a segmented network rather than only studying networking concepts theoretically. The completed lab combines switching, routing, DHCP, VLAN segmentation, access control, connectivity testing, and systematic troubleshooting in a single network environment.
